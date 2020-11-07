@@ -8,6 +8,7 @@ import {
     makeStyles,
     Card,
     CardHeader,
+    IconButton,
 } from '@material-ui/core/'
 import { SelectLang } from './'
 // import { Icon } from '../theme'
@@ -18,7 +19,7 @@ const useStyles = makeStyles(theme => ({
 	},
 }))
 
-export default function Welcome() {
+export default function Header() {
 	
 	const classes = useStyles()
 	// const theme = useTheme()
@@ -53,7 +54,13 @@ export default function Welcome() {
 					title={`The Munted Duck`}
 					subheader={`${country_name} ${choice.translation}`}
 					avatar={<React.Fragment>
-								<Avatar src={`/svg/muntedduckIcon.svg`} />
+								<IconButton
+								  onClick={(e) => {
+								    e.preventDefault()
+								    window.open(`/`, `_self`)
+								  }}>
+									<Avatar src={`/svg/muntedduckIcon.svg`} />
+								</IconButton>
 							</React.Fragment>}
 					action={<React.Fragment>
 								<SelectLang />

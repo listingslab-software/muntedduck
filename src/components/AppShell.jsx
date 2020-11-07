@@ -11,6 +11,7 @@ import {
 import { Icon } from '../theme'
 import { 
   Header,
+  MainGrid,
 } from './'
 
 const useStyles = makeStyles((theme) => ({
@@ -19,8 +20,6 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
   },
 }))
-
-
 
 function ScrollTop(props) {
 
@@ -53,12 +52,12 @@ function ScrollTop(props) {
 export default function AppShell(props) {
   
   const classes = useStyles()
-  // const theme = useTheme()
 
   return   <React.Fragment>
             <CssBaseline />
             <div className={clsx(classes.appShell)} >
               <Header />
+              <MainGrid />
               <Toolbar id={`back-to-top-anchor`} />
               <ScrollTop {...props}>
                 <Fab 
