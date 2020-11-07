@@ -64,7 +64,6 @@ export default function App() {
 				<div className="logoDiv">
 					<CannastoreLogo style={{height: '150'}} color={`#8aff20`} />
 				</div>
-				<h1>The Munted Duck</h1>
 			</div>
 }
 

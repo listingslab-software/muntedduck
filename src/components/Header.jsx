@@ -50,8 +50,8 @@ export default function Welcome() {
 
 	return	<Card className={classes.card}>
 				<CardHeader 
-					title={`The Munted Duck ${country_name} ${choice.translation}`}
-					subheader={choice.subheader}
+					title={`The Munted Duck`}
+					subheader={`${country_name} ${choice.translation}`}
 					avatar={<React.Fragment>
 								<Avatar src={`/svg/muntedduckIcon.svg`} />
 							</React.Fragment>}
