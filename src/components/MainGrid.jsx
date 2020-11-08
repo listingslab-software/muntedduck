@@ -2,17 +2,25 @@ import React from 'react'
 import clsx from 'clsx'
 import {
     makeStyles,
+    Avatar,
     Card,
     CardHeader,
     CardContent,
     CardActions,
     Grid,
     Button,
+    Typography,
 } from '@material-ui/core/'
+import { 
+    useSelector,
+} from 'react-redux'
 import { Icon } from '../theme'
 
 const useStyles = makeStyles(theme => ({
 	card: {
+		background: theme.palette.primary.main,
+		margin: theme.spacing(),
+		color: 'black',
 	},
 	cardActions: {
 		width: '100%',
@@ -23,15 +31,24 @@ const useStyles = makeStyles(theme => ({
 export default function MainGrid() {
 	
 	const classes = useStyles()
+	const appSlice = useSelector(state => state.app)
+	const {
+		locale,
+	} = appSlice
+	const {
+		country_name,
+	} = locale
+
 
 	return	<React.Fragment>
 				<Grid container>
-					<Grid item xs={6}>
-						<Card className={clsx(classes.none)}>
+					<Grid item xs={8}>
+						<Card className={clsx(classes.card)}>
 							<CardHeader 
-								title={`Card One`}
-								subheader={`subheader`}
-								avatar={<Icon icon={`food`} color={`primary`}/>}
+								disableTypography
+								title={<Typography variant={`body1`}>WordPress</Typography>}
+								subheader={<Typography variant={`body2`}>CMS</Typography>}
+								avatar={<Icon icon={`food`} color={`secondary`}/>}
 							/>
 							<CardContent>
 								content
@@ -40,7 +57,7 @@ export default function MainGrid() {
 								<div className={clsx(classes.cardActions)}>
 									<Button
 										variant={`contained`}
-										color={`primary`}
+										color={`secondary`}
 										onClick={(e) => {
 											e.preventDefault()
 										}}>
@@ -50,28 +67,17 @@ export default function MainGrid() {
 							</CardActions>
 						</Card>
 					</Grid>
-					<Grid item xs={6}>
-						<Card className={clsx(classes.none)}>
+					<Grid item xs={4}>
+						<Card className={clsx(classes.card)}>
 							<CardHeader 
-								title={`Card Two`}
-								subheader={`This will be...`}
-								avatar={<Icon icon={`food`} color={`primary`}/>}
+								disableTypography
+								title={<Typography variant={`body1`}>Buy Seeds</Typography>}
+								subheader={<Typography variant={`body2`}>in {country_name}</Typography>}
+								avatar={<Avatar 
+											alt={`Click me`}
+											src={`/png/logos/sensiseeds.png`}
+										/>}
 							/>
-							<CardContent>
-								content
-							</CardContent>
-							<CardActions>
-								<div className={clsx(classes.cardActions)}>
-									<Button
-										variant={`contained`}
-										color={`primary`}
-										onClick={(e) => {
-											e.preventDefault()
-										}}>
-										Click me
-									</Button>
-								</div>
-							</CardActions>
 						</Card>
 					</Grid>
 				</Grid>

@@ -45,7 +45,7 @@ export default function App() {
 			        	},
 				        ease: Power2.easeOut,
 				        duration: 0.85,
-				        rotationY: 140,
+				        // rotationY: 140,
 				        opacity: 0,
 			    	}
 			    )}, 750)
