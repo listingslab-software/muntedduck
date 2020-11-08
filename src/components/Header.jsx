@@ -10,19 +10,23 @@ import {
     CardHeader,
     IconButton,
 } from '@material-ui/core/'
-import { SelectLang } from './'
-// import { Icon } from '../theme'
+import { 
+	SelectLang,
+	User,
+} from './'
 
 const useStyles = makeStyles(theme => ({
 	card: {
 		width: '100%',
+	},
+	actions:{
+		display: 'flex',
 	},
 }))
 
 export default function Header() {
 	
 	const classes = useStyles()
-	// const theme = useTheme()
 	const dispatch = useDispatch()
 	const appSlice = useSelector(state => state.app)
 	const {
@@ -54,16 +58,28 @@ export default function Header() {
 					title={`The Munted Duck`}
 					subheader={`${country_name} ${choice.translation}`}
 					avatar={<React.Fragment>
-								<IconButton
-								  onClick={(e) => {
-								    e.preventDefault()
-								    window.open(`/`, `_self`)
-								  }}>
-									<Avatar src={`/svg/muntedduckIcon.svg`} />
-								</IconButton>
+								
+
+								<div className={classes.actions}>
+									<IconButton
+									  onClick={(e) => {
+									    e.preventDefault()
+									    window.open(`/`, `_self`)
+									  }}>
+										<Avatar src={`/svg/muntedduckIcon.svg`} />
+									</IconButton>
+
+									<SelectLang />
+
+								</div>
+
+
 							</React.Fragment>}
 					action={<React.Fragment>
-								<SelectLang />
+								<div className={classes.actions}>
+									
+									<User />
+								</div>
 							</React.Fragment>}
 					
 				/>

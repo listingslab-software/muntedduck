@@ -27,32 +27,38 @@ export const appSlice = {
       { 
         code: "en", 
         translation: "In English", 
-        title: `Welcome to Cannastore`,
+        title: `Welcome to The Munted Duck`,
         subheader: `The world's first Cannabis Mobile App`,
       },
       { 
         code: "nl", 
         translation: "In het Nederlands", 
-        title: `Welkom bij Cannastore`,
+        title: `Welkom bij The Munted Duck`,
         subheader: `De eerste mobiele Cannabis-app ter wereld`,
       },
       { 
         code: "fr", 
         translation: "En français", 
-        title: `Bienvenue chez Cannastore`,
+        title: `Bienvenue chez The Munted Duck`,
         subheader: `La première application mobile de cannabis au monde`,
       },
       { 
         code: "es", 
         translation: "En español", 
-        title: `Bienvenido a Cannastore`,
+        title: `Bienvenido a The Munted Duck`,
         subheader: `La primera aplicación móvil de cannabis del mundo`,
       },
       { 
         code: "de", 
         translation: "Auf Deutsch", 
-        title: `Willkommen im Cannastore`,
+        title: `Willkommen im The Munted Duck`,
         subheader: `Die weltweit erste Cannabis Mobile App`,
+      },
+      { 
+        code: "cn", 
+        translation: "用中文（表达", 
+        title: `欢迎来到蒙德鸭`,
+        subheader: `世界上第一个大麻移动应用`,
       },
   ]
 }

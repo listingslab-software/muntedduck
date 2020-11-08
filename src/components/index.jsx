@@ -7,6 +7,7 @@ import SingleResult from './SingleResult'
 import MightyButton from './MightyButton'
 import About from './About'
 import MainGrid from './MainGrid'
+import User from './User'
 
 export {
 	AppShell,
@@ -17,4 +18,5 @@ export {
 	MightyButton,
 	About,
 	MainGrid,
+	User,
 }
