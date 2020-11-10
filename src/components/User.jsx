@@ -2,7 +2,6 @@ import React from 'react'
 import clsx from 'clsx'
 import {
     makeStyles,
-    Avatar,
     IconButton,
 } from '@material-ui/core/'
 import { 
@@ -32,10 +31,13 @@ export default function User() {
 	const {
 		country_name,
 	} = locale
-
+	const showCountryName = false
+	if (showCountryName) console.log ('country_name', country_name)
 
 	return	<React.Fragment>
 				<IconButton
+
+					className={clsx(classes.none)}
 					color={`secondary`}
 					onClick={(e) => {
 						e.preventDefault()

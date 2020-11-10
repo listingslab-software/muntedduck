@@ -12,7 +12,7 @@ import {
 } from '@material-ui/core/'
 import { 
 	SelectLang,
-	User,
+	// User,
 } from './'
 
 const useStyles = makeStyles(theme => ({
@@ -59,7 +59,10 @@ export default function Header() {
 					subheader={`${country_name} ${choice.translation}`}
 					avatar={<React.Fragment>
 								
-
+									<SelectLang />
+								
+							</React.Fragment>}
+					action={<React.Fragment>
 								<div className={classes.actions}>
 									<IconButton
 									  onClick={(e) => {
@@ -68,41 +71,20 @@ export default function Header() {
 									  }}>
 										<Avatar src={`/svg/muntedduckIcon.svg`} />
 									</IconButton>
-
-									<SelectLang />
-
-								</div>
-
-
-							</React.Fragment>}
-					action={<React.Fragment>
-								<div className={classes.actions}>
-									
-									<User />
 								</div>
 							</React.Fragment>}
+					
 					
 				/>
 			</Card>
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /*
-
+action={<React.Fragment>
+								<div className={classes.actions}>
+									<User />
+								</div>
+							</React.Fragment>}
 <IconButton
   onClick={(e) => {
     e.preventDefault()

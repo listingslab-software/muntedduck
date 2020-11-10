@@ -5,16 +5,16 @@ import {
     Avatar,
     Card,
     CardHeader,
-    CardContent,
-    CardActions,
+    // CardContent,
+    // CardActions,
     Grid,
-    Button,
+    // Button,
     Typography,
 } from '@material-ui/core/'
 import { 
     useSelector,
 } from 'react-redux'
-import { Icon } from '../theme'
+// import { Icon } from '../theme'
 
 const useStyles = makeStyles(theme => ({
 	card: {
@@ -42,7 +42,30 @@ export default function MainGrid() {
 
 	return	<React.Fragment>
 				<Grid container>
-					<Grid item xs={8}>
+					
+					<Grid item xs={12} md={6}>
+						<Card className={clsx(classes.card)}>
+							<CardHeader 
+								disableTypography
+								title={<Typography variant={`body1`}>
+											Buy Sensi Seeds
+										</Typography>}
+								subheader={<Typography variant={`body2`}>
+											in {country_name}
+										</Typography>}
+								avatar={<Avatar 
+											alt={`Click me`}
+											src={`/png/logos/sensiseeds.png`}
+										/>}
+							/>
+						</Card>
+					</Grid>
+				</Grid>
+			</React.Fragment>
+}
+
+/*
+<Grid item xs={12} md={6}>
 						<Card className={clsx(classes.card)}>
 							<CardHeader 
 								disableTypography
@@ -67,20 +90,4 @@ export default function MainGrid() {
 							</CardActions>
 						</Card>
 					</Grid>
-					<Grid item xs={4}>
-						<Card className={clsx(classes.card)}>
-							<CardHeader 
-								disableTypography
-								title={<Typography variant={`body1`}>Buy Seeds</Typography>}
-								subheader={<Typography variant={`body2`}>in {country_name}</Typography>}
-								avatar={<Avatar 
-											alt={`Click me`}
-											src={`/png/logos/sensiseeds.png`}
-										/>}
-							/>
-						</Card>
-					</Grid>
-				</Grid>
-			</React.Fragment>
-}
-
+*/

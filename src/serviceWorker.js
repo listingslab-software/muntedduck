@@ -1,4 +1,4 @@
-import packageJSON from "../package.json";
+// import packageJSON from "../package.json";
 
 const isLocalhost = Boolean(
   window.location.hostname === "localhost" ||
@@ -22,8 +22,8 @@ export function register(config) {
         checkValidServiceWorker(swUrl, config);
         navigator.serviceWorker.ready.then(() => {
           console.log(
-            "This listingslab PWA is being served cache-first by a service " +
-              "worker. https://listingslab.com/work/javascript/service-workers"
+            "This listingslab PWA is being served cache-first by a Service " +
+              "Worker"
           );
         });
       } else {
@@ -46,18 +46,17 @@ function registerValidSW(swUrl, config) {
           if (installingWorker.state === "installed") {
             if (navigator.serviceWorker.controller) {
               // eslint-disable-next-line
-              const update = confirm("Update available. Do it now?");
-              if (update === true) {
-                window.localStorage.clear();
-                unregister();
-                window.location.assign("/?upgrade-from=" + packageJSON.version);
-              }
-
+              // const update = confirm("Update available. Do it now?")
+              // if (update === true) {
+              //   window.localStorage.clear()
+              //   unregister()
+              //   window.open("/?from=" + packageJSON.version, "_self")
+              // }
               if (config && config.onUpdate) {
                 config.onUpdate(registration);
               }
             } else {
-              console.log("PWA Enabled. https://listingslab.com/work/javascript/pwa")
+              console.log("Listingslab PWA Enabled")
               if (config && config.onSuccess) {
                 config.onSuccess(registration);
               }
@@ -67,7 +66,7 @@ function registerValidSW(swUrl, config) {
       };
     })
     .catch(error => {
-      console.error("Error during service worker registration:", error);
+      console.error("Error during service worker registration:", error)
     });
 }
 
@@ -81,24 +80,22 @@ function checkValidServiceWorker(swUrl, config) {
       ) {
         navigator.serviceWorker.ready.then(registration => {
           registration.unregister().then(() => {
-            window.location.reload();
+            window.location.reload()
           });
         });
       } else {
-        registerValidSW(swUrl, config);
+        registerValidSW(swUrl, config)
       }
     })
     .catch(() => {
-      console.log(
-        "No internet connection found. App is running in offline mode."
-      );
+      alert('No connection. Listingslab PWA now running in offline mode')
     });
 }
 
 export function unregister() {
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker.ready.then(registration => {
-      registration.unregister();
+      registration.unregister()
     });
   }
 }
